@@ -97,6 +97,10 @@
             display: inline-block;
             margin: 75px 0;
         }
+
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -105,30 +109,73 @@
 
 <h1>- 脉动时速 ∙ VibroSpeed -</h1>
 <div id="intro">
-    <p>A Watch-only app lets you view and feel speed on your wrist.</p>
-    <a href="https://apps.apple.com/app/id6480349110" class="btn">View more in App Store</a>
+    <div class="locale-en">
+        <p>A Watch-only app lets you view and feel speed on your wrist.</p>
+        <a href="https://apps.apple.com/app/id6480349110" class="btn">View more in App Store</a>
+    </div>
+    <div class="locale-cn hide">
+        <p>腕上语音码表，将时速用语音、振动在期望的一瞬报给你。</p>
+        <a href="https://apps.apple.com/app/id6480349110" class="btn">在 App Store 中查看更多</a>
+    </div>
 </div>
 
 <h2>- 支持 ∙ Support -</h2>
-<p>Please contact <a href="mailto:jack9ye@163.com">jack9ye@163.com</a></p>
+<div>
+    <div class="locale-en">
+        <p>Please contact <a href="mailto:jack9ye@163.com">jack9ye@163.com</a></p>
+    </div>
+    <div class="locale-cn hide">
+        <p>请联络 <a href="mailto:jack9ye@163.com">jack9ye@163.com</a></p>
+    </div>
+</div>
+
 
 <h2>- 隐私 ∙ Privacy -</h2>
 <div id="privacy">
-    <p>Your privacy is of utmost importance to us. Your data belongs to you, and we will only use it according to the policies outlined below.</p>
+    <div class="locale-en">
+        <p>Your privacy is of utmost importance to us. Your data belongs to you, and we will only use it according to the policies outlined below.</p>
 
-    <h3>Collection of Personally-Identifying Information</h3>
-    <p><strong>Location Data: </strong>VibroSpeed requests access to your location to calculate and display your real-time speed. This data is used exclusively within the app to provide features such as speed notifications via voice or haptic feedback. Your location data is never stored, shared, or transmitted outside your device.</p>
-    <p><strong>HealthKit Data: </strong>If you choose to integrate VibroSpeed with HealthKit, the app will only access the data types you explicitly grant permission for. VibroSpeed may request access to HealthKit to read and write relevant information, such as workout duration and metrics, for workout analysis. No data collected from HealthKit is transmitted outside your device or shared with third parties. The data remains securely stored in your HealthKit store, based on your permissions.</p>
+        <h3>Collection of Personally-Identifying Information</h3>
+        <p><strong>Location Data: </strong>VibroSpeed requests access to your location to calculate and display your real-time speed. This data is used exclusively within the app to provide features such as speed notifications via voice or haptic feedback. Your location data is never stored, shared, or transmitted outside your device.</p>
+        <p><strong>HealthKit Data: </strong>If you choose to integrate VibroSpeed with HealthKit, the app will only access the data types you explicitly grant permission for. VibroSpeed may request access to HealthKit to read and write relevant information, such as workout duration and metrics, for workout analysis. No data collected from HealthKit is transmitted outside your device or shared with third parties. The data remains securely stored in your HealthKit store, based on your permissions.</p>
 
-    <h3>Protection of Personal Data</h3>
-    <p>VibroSpeed does not transmit any information outside of your device. All data remains local and is used solely within the app.</p>
+        <h3>Protection of Personal Data</h3>
+        <p>VibroSpeed does not transmit any information outside of your device. All data remains local and is used solely within the app.</p>
 
-    <p>If you have any questions regarding of your data, please contact support.</p>
+        <p>If you have any questions regarding of your data, please contact support.</p>
 
-    <h3>Last Updated: 2024-09-23</h3>
+        <h3>Last Updated: 2024-09-23</h3>
+    </div>
+    <div class="locale-cn hide">
+        <p>您的隐私对我们至关重要。您的数据属于您个人，我们将仅根据以下政策使用您的数据。</p>
+
+        <h3>个人信息的收集</h3>
+        <p><strong>位置信息：</strong>VibroSpeed 请求访问您的位置信息，以计算并显示您的实时速度。此数据仅在应用程序内使用，用于提供语音播报或触感通知功能。您的位置信息绝不会被存储、共享或传输到您的设备之外。</p>
+        <p><strong>健康数据：</strong>如果您选择将 VibroSpeed 与“健康”App 集成，该应用程序将仅访问您明确授予权限的数据类型。VibroSpeed 可能会请求访问“健康”App 以读取和写入相关信息（例如锻炼持续时间和指标），用于锻炼分析。从“健康”App 收集的数据不会传输到您的设备之外或与第三方共享。根据您的权限许可，数据将安全地存储在您的“健康”App 数据库中。</p>
+
+        <h3>个人信息的保护</h3>
+        <p>VibroSpeed 不会将任何信息传输到您的设备之外。所有数据都保留在本地，并且仅在应用程序内使用。</p>
+
+        <p>如果您对您的数据有任何疑问，请联系客服支持。</p>
+
+        <h3>更新日期：2024-09-25</h3>
+    </div>
 </div>
 
 <a id="back" href="index.html">返回 ∙ Back</a>
+
+<script>
+if (navigator.language === "zh-CN") {
+    const cns = document.getElementsByClassName("locale-cn");
+    for (const cn of cns) {
+        cn.classList.remove("hide");
+    }
+    const ens = document.getElementsByClassName("locale-en");
+    for (const en of ens) {
+        en.classList.add("hide");
+    }
+}
+</script>
 
 </body>
 </html>
